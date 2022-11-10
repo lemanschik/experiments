@@ -8,9 +8,13 @@ everything hits the finaly storage location each file gets a UUID on creation th
 
 but split the RRS how we call them in future have a schema we use internal :: as delimiter for the UUID protocol used to create the UUID.
 ```
-RRS::sha256::UUID
-sha256::UUID
+RRS::sha256::UUID link
+sha256::UUID content hash indexed content using sha256
+volume::UUID 
+dag::UUID used to build dag graph representations of volumes or partial volumes enables p2p filesharing via content addressing. using eg: sha256::UUID references
 ```
-RRS:: is a special case Resolveable Resource Specifiers are without content they are implementing the concept of injectable hardlinks or overrides.
+RRS:: is a special case Resolveable Resource Specifiers are without content they store only a referencingId which can by it self via its ID protocol indicate what type that is. they are implementing the concept of injectable hardlinks or overrides.
 They should not get used often internal you should always prefer to build a index or collection of the Object Storage Objects that you want to
 combine into a volume or filesystem.
+
+they can ideal be used to incremental update the state of a object that holds content like a document tracked by the content/tracker component the tracker component can place incremental artifacts represented as RSS::sha256::UUID for the final content that is maybe stored else where and can store a references to the real content under: sha256::UUID
