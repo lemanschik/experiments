@@ -7,6 +7,7 @@ bundle format is 1:1 Object representation of the fs component internal so all d
 
 ```
 const volume = { 
+  // Note: RRS that does not resolve on volume cleanups gets garbage collected.
   "RRS::sha256::s8342da....": [ ...meta ],
   "sha256::s8342da....": "content{}[]" 
 }
