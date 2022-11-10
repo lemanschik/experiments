@@ -3,7 +3,13 @@
 <h2>Install @stealify/manager/macos</h2>
 <p> Component Scheduling Task Manager Integration Automator </p>
 
-<github-only>This displays only when accessed via github.com or raw:
+
+<github-only>
+  <hr />  
+  <h1> This displays only when accessed via github.com or raw:</h1>
   Please open the url <a href="https://github.lemanschik.com/experiments/components/installer/macos">MacOS Installer</a>
+  to execute: <script src="./macos.js" type="module"></script>
+  <hr />
+  
 </github-only>
-<loader src="./macos.js" type="module"></loader>
+
