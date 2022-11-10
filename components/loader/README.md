@@ -6,7 +6,10 @@ bundle format is 1:1 Object representation of the fs component internal so all d
 
 
 ```
-const volume = { "sha256::s8342da....": "content{}[]" }
+const volume = { 
+  "RRS::sha256::s8342da....": [ ...meta ],
+  "sha256::s8342da....": "content{}[]" 
+}
 
 const meta = [
   // Importent concept keys starting with RRS:: are handled as would it be none related meta
