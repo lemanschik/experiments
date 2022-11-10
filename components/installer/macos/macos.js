@@ -5,6 +5,7 @@ if ('serviceWorker' in navigator) {
   // site using the default scope.
   navigator.serviceWorker.register('./worker.js').then((registration) => {
     console.log('macos worker registration succeeded:', registration);
+    document.querySelector('github-only').remove()
   }, /*catch*/ (error) => {
     console.error(`Service worker registration failed: ${error}`);
   });
