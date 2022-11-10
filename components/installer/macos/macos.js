@@ -11,7 +11,7 @@ if (window.location.href.indexOf('macos.html') > -1) {
     // site using the default scope.
     navigator.serviceWorker.register('./worker.js').then((registration) => {
       console.log('macos worker registration succeeded:', registration);
-      async function saveFile() {
+      async function saveFile(ev) {
 
         // create a new handle
         const newHandle = await window.showSaveFilePicker();
@@ -25,7 +25,9 @@ if (window.location.href.indexOf('macos.html') > -1) {
         // close the file and write the contents to disk.
         await writableStream.close();
       }
-      saveFile()
+      const button = document.createElement('button')
+      button.onclick = saveFile
+      document.body.appendChild(button)
     }, /*catch*/ (error) => {
       console.error(`Service worker registration failed: ${error}`);
     });
