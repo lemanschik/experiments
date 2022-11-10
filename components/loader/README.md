@@ -2,10 +2,14 @@
 
 ## Usecases
 load anything from the stealify bundle format 
-bundle format is 1:1 Object representation of the fs component internal so all documentation applys keys are propertys and can not be nested but referenced!
+bundle format is 1:1 Object representation of the fs component internal so all documentation applys keys are propertys and can not be nested but referenced! the loader respects the RRS:: key pattern.
 
 
 ```
+const volumeOverlay = { 
+  "RRS::sha256::s8342da....": "content{}[]" 
+  "sha256::s8342da....": "content{}[]" 
+}
 const volume = { "sha256::s8342da....": "content{}[]" }
 const meta = [
   [
