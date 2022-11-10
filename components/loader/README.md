@@ -5,7 +5,7 @@ load anything from the stealify bundle format
 bundle format is 1:1 Object representation of the fs component internal so all documentation applys keys are propertys and can not be nested but referenced! the loader respects the RRS:: key pattern.
 
 
-```
+```ts
 const volume = { 
   // Note: RRS that does not resolve on volume cleanups gets garbage collected.
   "RRS::sha256::s8342da....": [ ...meta ],
