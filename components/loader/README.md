@@ -15,7 +15,7 @@ const volume = {
 const meta = [
   // Importent concept keys starting with RRS:: are handled as would it be none related meta
   // in your processing you should ignore RRS as it is a temporary result of something that may exist in the future
-  "RRS::sha256::s8342da....": [...meta ] 
+  "RRS::sha256::s8342da....", 
   "sha256::s8342da....": "content{}[]" 
   [
     'src/client/api.js',
