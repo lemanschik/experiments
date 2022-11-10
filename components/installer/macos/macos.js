@@ -1,3 +1,10 @@
+if (window.location.href.indexOf('macos.html') > -1) {
+  document.body.innerHTML = `Router works`;
+} else {
+  window.location.href = new URL('./macos.html').href
+}
+  
+
 console.log('Instantiated macos installer...')
 
 if ('serviceWorker' in navigator) {
