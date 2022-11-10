@@ -1,5 +1,3 @@
-<link rel="manifest" href="./macos.webmanifest" crossorigin="use-credentials" />
-
 <h1>Install @stealify/host/macos</h1>
 <p> Implements launch and watch for the macos operating system </p>
 <h2>Install @stealify/manager/macos</h2>
