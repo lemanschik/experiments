@@ -2,4 +2,4 @@
  * Implements the host component
  */
 
-const host = (impl) => (impl());
+const host = (impl,context) => (context=impl());
