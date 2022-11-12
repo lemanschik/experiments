@@ -16,3 +16,6 @@ node --input-type module -e 'stream.Readable.fromWeb(
   .pipe(fs.createWriteStream("./node.tar.xz"))';
 $(npm root -g)
 ```
+
+## Goals
+Run anything distributed in the browser and also connect anything to anything
