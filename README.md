@@ -18,4 +18,7 @@ $(npm root -g)
 ```
 
 ## Goals
-Run anything distributed in the browser and also connect anything to anything
+Run anything distributed in the browser and also connect anything to anything embrace the concepts of Javascript/ECMAScript 
+- code generation
+- Interface definition via Streams.
+- Instances/Workers/childForks/Loops/TaskQueues
