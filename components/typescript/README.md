@@ -11,3 +11,4 @@ eg:
 - Added Support for Desktop Extensions 
 - multiple extension hosts as also made it fast hack able via Functional Programming. 
 - replaces the typescript cli tools with lsp based once that can verify typescript syntax even from none typescript files and even partial.
+- Implements the Debug Adapter Protocol for Multilenguage Support Polyglot. see: https://microsoft.github.io/debug-adapter-protocol/
