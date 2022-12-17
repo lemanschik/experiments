@@ -1,3 +1,20 @@
-export const resolve = await fetch('https://raw.githubusercontent.com/lemanschik/awesome/components/resolve/github.com.js').then(r=>r.blob()).then(blob=>new Blob([blob],{ type: "text/javascript" })).then(window.URL.createObjectURL).then(resolvedId=>import(resolvedId,new URL(`https://raw.githubusercontent.com/lemanschik/awesome/components/resolve`)));
+// Essential
+export const resolveBlob = (r) => r.blob().then((blob) => new Blob([blob], { type: "text/javascript" }))
+  .then(window.URL.createObjectURL).then((resolvedId) => import(resolvedId, new URL(r.url)));
+
+export const resolveRawGithub = (githubRef) => `https://raw.githubusercontent.com/${githubRef}`;
+
+// import('./experiments.js?id=lemanschik/awesome/components/resolve/github.com.js').then(({ resolvedId }) => import(resolvedId));
+export const resolvedId = await fetch( resolveRawGithub(new URL(import.meta.url).searchParams.get('id')) ).then(resolveBlob)
+
+// import('./experiments.js?id=lemanschik/awesome/components/resolve/github.com.js').then(({ exports }) => exports.git);
+export const exports = import(resolvedId);
+
+// TODO: evaluate deprecation or usefullnes
+export const fetchRawGithub = (githubRef) => fetch(resolveRawGithub(`${githubRef}`))
+
+// Notes:
+// 'https://raw.githubusercontent.com/lemanschik/awesome/components/resolve/github.com.js').then(resolveBlob)
+ //.then(blob=>new Blob([blob],{ type: "text/javascript" })).then(window.URL.createObjectURL).then(resolvedId=>import(resolvedId,new URL(`https://raw.githubusercontent.com/lemanschik/awesome/components/resolve`)));
 
 //await import(`https://raw.githubusercontent.com/lemanschik/awesome/components/resolve/github.com.js`);
