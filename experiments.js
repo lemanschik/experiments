@@ -1,6 +1,10 @@
 // Essential
-export const resolveBlob = (r) => r.blob().then((blob) => new Blob([blob], { type: "text/javascript" }))
-  .then(window.URL.createObjectURL).then((resolvedId) => import(resolvedId, new URL(r.url)));
+// const importJsBlob = (resolvedJsBlob) => import(resolvedJsBlob[0], resolvedJsBlob[1]);
+export const importJsBlob = ([resolvedId, importee]) => import(resolvedId, importee);
+
+export const resolveJsBlob = (r) => r.blob().then((blob) => new Blob([blob], { type: "text/javascript" }))
+  .then(window.URL.createObjectURL).then((resolvedId) => [resolvedId, new URL(r.url)]));
+//  .then(importJsBlob)
 
 export const resolveRawGithub = (githubRef) => `https://raw.githubusercontent.com/${githubRef}`;
 
